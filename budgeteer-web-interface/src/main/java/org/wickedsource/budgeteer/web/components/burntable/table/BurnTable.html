@@ -1,4 +1,4 @@
-<wicket:panel>
+<wicket:panel xmlns:wicket="http://www.w3.org/1999/xhtml">
 
     <div wicket:id="feedback"></div>
     <p class="pull-right">Total burned budget with current filter: <strong wicket:id="total">€120.000</strong></p><br/>
@@ -6,12 +6,12 @@
     <table class="table table-bordered table-hover" wicket:id="table">
         <thead>
         <tr>
-            <th>Budget</th>
-            <th>Name</th>
-            <th>Daily Rate</th>
-            <th>Date</th>
-            <th>Hours</th>
-            <th>Budget Burned</th>
+            <th><wicket:message key="table.head.budget">Budget</wicket:message></th>
+            <th><wicket:message key="table.head.name">Name</wicket:message></th>
+            <th><wicket:message key="table.head.dailyRate">Daily Rate</wicket:message></th>
+            <th><wicket:message key="table.head.date">Date</wicket:message></th>
+            <th><wicket:message key="table.head.hours">Hours</wicket:message></th>
+            <th><wicket:message key="table.head.budgetBurned">Budget Burned</wicket:message></th>
         </tr>
         </thead>
         <tbody>
@@ -26,12 +26,12 @@
         </tbody>
         <tfoot>
         <tr>
-            <th>Budget</th>
-            <th>Name</th>
-            <th>Daily Rate</th>
-            <th>Date</th>
-            <th>Hours</th>
-            <th>Budget Burned</th>
+            <th><wicket:message key="table.head.budget">Budget</wicket:message></th>
+            <th><wicket:message key="table.head.name">Name</wicket:message></th>
+            <th><wicket:message key="table.head.dailyRate">Daily Rate</wicket:message></th>
+            <th><wicket:message key="table.head.date">Date</wicket:message></th>
+            <th><wicket:message key="table.head.hours">Hours</wicket:message></th>
+            <th><wicket:message key="table.head.budgetBurned">Budget Burned</wicket:message></th>
         </tr>
         </tfoot>
     </table>
