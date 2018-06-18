@@ -1,6 +1,9 @@
 package org.wickedsource.budgeteer.persistence.record;
 
+import com.querydsl.core.types.Predicate;
 import org.joda.money.Money;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -212,7 +215,6 @@ public interface WorkRecordRepository extends CrudRepository<WorkRecordEntity, L
     @Query("select wr from WorkRecordEntity wr where wr.budget.project.id = :projectId")
     List<WorkRecordEntity> findByProjectId(@Param("projectId") long projectId);
 
-    
-    
+    Page<WorkRecordEntity> findAll(Predicate predicate, Pageable pageRequest);
     
 }

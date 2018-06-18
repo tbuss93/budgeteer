@@ -2,6 +2,8 @@ package org.wickedsource.budgeteer.service.record;
 
 import com.querydsl.core.types.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.wickedsource.budgeteer.ListUtil;
 import org.wickedsource.budgeteer.persistence.record.*;
@@ -133,6 +135,9 @@ public class RecordService {
         workRecordRepository.save(entity);
     }
 
-
+    public List<WorkRecord> getFilteredWorkRecordByPage(WorkRecordFilter filter, Pageable pageable) {
+        Predicate query = WorkRecordQueries.findByFilter(filter);
+        return recordMapper.map(ListUtil.toArrayList(workRecordRepository.findAll(query, pageable)));
+    }
 
 }
